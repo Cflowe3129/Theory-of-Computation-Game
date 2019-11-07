@@ -1,0 +1,6 @@
+framework module Pods_TheoryProj_mobile {
+  umbrella header "Pods-TheoryProj-mobile-umbrella.h"
+
+  export *
+  module * { export * }
+}
