@@ -52,7 +52,6 @@
 		52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B47A461A53D09B004E4C60 /* Security.framework */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
 		986B08AE2370DD3000D35EA7 /* Scene2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 986B08AC2370DD3000D35EA7 /* Scene2.cpp */; };
-		986B08C02370EA3000D35EA7 /* Genie.png in Resources */ = {isa = PBXBuildFile; fileRef = 986B08BF2370EA3000D35EA7 /* Genie.png */; };
 		986B09122373AFCA00D35EA7 /* Scene2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 986B08AC2370DD3000D35EA7 /* Scene2.cpp */; };
 		986B09152373B01400D35EA7 /* Scene1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98FD759B236923C9005A512F /* Scene1.cpp */; };
 		98FD759C236923C9005A512F /* Scene1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 98FD759B236923C9005A512F /* Scene1.cpp */; };
@@ -155,7 +154,6 @@
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		986B08AC2370DD3000D35EA7 /* Scene2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Scene2.cpp; sourceTree = "<group>"; };
 		986B08AD2370DD3000D35EA7 /* Scene2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Scene2.h; sourceTree = "<group>"; };
-		986B08BF2370EA3000D35EA7 /* Genie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Genie.png; sourceTree = "<group>"; };
 		98FD759A236923C9005A512F /* Scene1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scene1.h; sourceTree = "<group>"; };
 		98FD759B236923C9005A512F /* Scene1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Scene1.cpp; sourceTree = "<group>"; };
 		9AC5C807D8DCD3FBD28019BE /* Pods-TheoryProj-mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheoryProj-mobile.debug.xcconfig"; path = "Target Support Files/Pods-TheoryProj-mobile/Pods-TheoryProj-mobile.debug.xcconfig"; sourceTree = "<group>"; };
@@ -314,7 +312,6 @@
 				3EACC98E19EE6D4300EB3C5E /* res */,
 				46880B7619C43A67006E1F66 /* CloseNormal.png */,
 				46880B7719C43A67006E1F66 /* CloseSelected.png */,
-				986B08BF2370EA3000D35EA7 /* Genie.png */,
 				46880B7A19C43A67006E1F66 /* HelloWorld.png */,
 			);
 			name = Resources;
@@ -478,7 +475,6 @@
 				3EACC98F19EE6D4300EB3C5E /* res in Resources */,
 				1AF87B891F6F781D007BE51C /* LaunchScreenBackground.png in Resources */,
 				46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */,
-				986B08C02370EA3000D35EA7 /* Genie.png in Resources */,
 				1AF87B881F6F781D007BE51C /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

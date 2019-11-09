@@ -54,19 +54,21 @@ bool HelloWorld::init()
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
     
-    std::string fullFilePath = FileUtils::getInstance()->fullPathForFilename("Start.png");
-    CCLOG("File Path: %s", fullFilePath.c_str());
+    std::string fullStartPath = FileUtils::getInstance()->fullPathForFilename("Start.png");
+    std::string fullGeniePath = FileUtils::getInstance()->fullPathForFilename("Genie.png");
+//    CCLOG("File Path: %s", fullStartPath.c_str());
+//    CCLOG("File Path: %s", fullGeniePath.c_str());
     
     auto playItem = MenuItemImage::create(
-    fullFilePath,
-    fullFilePath,
+    fullStartPath,
+    fullStartPath,
     CC_CALLBACK_1(HelloWorld::menuPlayCallback, this));
 
     if (playItem == nullptr ||
         playItem->getContentSize().width <= 0 ||
         playItem->getContentSize().height <= 0)
     {
-        problemLoading("'fullFilePath' and 'fullFilePath'");
+        problemLoading("'fullStartPath' and 'fullStartPath'");
     }
     else
     {
@@ -131,15 +133,15 @@ bool HelloWorld::init()
     
     
 //     add "HelloWorld" splash screen"
-    auto sprite = Sprite::create("Genie.png");
+    auto sprite = Sprite::create(fullGeniePath);
     if (sprite == nullptr)
     {
-        problemLoading("'Genie.png'");
+        problemLoading("'fullGeniePath'");
     }
     else
     {
         // position the sprite on the center of the screen
-        sprite->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
+        sprite->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/1.5 + origin.y));
 
         // add the sprite as a child to this layer
         this->addChild(sprite, 0);
@@ -148,20 +150,6 @@ bool HelloWorld::init()
     
     return true;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 void HelloWorld::menuCloseCallback(Ref* pSender)
 {

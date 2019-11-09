@@ -53,17 +53,19 @@ bool Scene1::init()
 
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
-
+    
+    std::string fullStartPath = FileUtils::getInstance()->fullPathForFilename("Start.png");
+    
     auto playItem = MenuItemImage::create(
-    "Start.png",
-    "Start.png",
+    fullStartPath,
+    fullStartPath,
     CC_CALLBACK_1(Scene1::menuPlayCallback, this));
     
     if (playItem == nullptr ||
         playItem->getContentSize().width <= 0 ||
         playItem->getContentSize().height <= 0)
     {
-        issueLoading("'FullFilePath' and 'Start.png'");
+        issueLoading("'fullStartPath' and 'fullStartPath'");
     }
     else
     {
