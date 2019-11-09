@@ -89,6 +89,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 #endif
         director->setOpenGLView(glview);
     }
+    FileUtils::getInstance()->addSearchPath("res");
 
     // turn on display FPS
     director->setDisplayStats(true);

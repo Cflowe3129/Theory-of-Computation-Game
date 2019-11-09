@@ -53,21 +53,24 @@ bool HelloWorld::init()
 
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
-
-    auto playItem = MenuItemImage::create(
-    "Start.png",
-    "Start.png",
-    CC_CALLBACK_1(HelloWorld::menuPlayCallback, this));
     
+    std::string fullFilePath = FileUtils::getInstance()->fullPathForFilename("Start.png");
+    CCLOG("File Path: %s", fullFilePath.c_str());
+    
+    auto playItem = MenuItemImage::create(
+    fullFilePath,
+    fullFilePath,
+    CC_CALLBACK_1(HelloWorld::menuPlayCallback, this));
+
     if (playItem == nullptr ||
         playItem->getContentSize().width <= 0 ||
         playItem->getContentSize().height <= 0)
     {
-        problemLoading("'Start.png' and 'Start.png'");
+        problemLoading("'fullFilePath' and 'fullFilePath'");
     }
     else
     {
-        float x = origin.x + visibleSize.width - playItem->getContentSize().width / .8;
+        float x = origin.x + visibleSize.width - playItem->getContentSize().width / 1.4;
         float y = origin.y + playItem->getContentSize().height;
         playItem->setPosition(Vec2(x,y));
     }
@@ -127,7 +130,7 @@ bool HelloWorld::init()
 
     
     
-    // add "HelloWorld" splash screen"
+//     add "HelloWorld" splash screen"
     auto sprite = Sprite::create("Genie.png");
     if (sprite == nullptr)
     {

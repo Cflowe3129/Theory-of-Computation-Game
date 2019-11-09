@@ -63,11 +63,11 @@ bool Scene1::init()
         playItem->getContentSize().width <= 0 ||
         playItem->getContentSize().height <= 0)
     {
-        issueLoading("'Start.png' and 'Start.png'");
+        issueLoading("'FullFilePath' and 'Start.png'");
     }
     else
     {
-        float x = origin.x + visibleSize.width - playItem->getContentSize().width / .8;
+        float x = origin.x + visibleSize.width - playItem->getContentSize().width / 1.4;
         float y = origin.y + playItem->getContentSize().height;
         playItem->setPosition(Vec2(x,y));
     }
