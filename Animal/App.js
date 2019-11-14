@@ -4,29 +4,22 @@ import * as Font from 'expo-font';
 import React, { useState } from 'react';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 
 import AppNavigator from './navigation/AppNavigator';
+import MainTabNavigator from './navigation/MainTabNavigator';
+import Question_One from './screens/Question_One';
+import HomeScreen from './screens/HomeScreen';
 
-export default function App(props) {
-  const [isLoadingComplete, setLoadingComplete] = useState(false);
-
-  if (!isLoadingComplete && !props.skipLoadingScreen) {
-    return (
-      <AppLoading
-        startAsync={loadResourcesAsync}
-        onError={handleLoadingError}
-        onFinish={() => handleFinishLoading(setLoadingComplete)}
-      />
-    );
-  } else {
-    return (
-      <View style={styles.container}>
-        {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-        <AppNavigator />
-      </View>
-    );
-  }
-}
+export default createAppContainer(
+  createSwitchNavigator({
+    // You could add another route here for authentication.
+    // Read more at https://reactnavigation.org/docs/en/auth-flow.html
+    Main: MainTabNavigator,
+    Home: HomeScreen,
+    QuestionOne: Question_One,
+  })
+);
 
 async function loadResourcesAsync() {
   await Promise.all([
@@ -60,3 +53,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
 });
+
+
+// export default createAppContainer(createSwitchNavigator({
+//   Home: HomeScreen,
+//   Q_one: QuestionOne,
+// }))
