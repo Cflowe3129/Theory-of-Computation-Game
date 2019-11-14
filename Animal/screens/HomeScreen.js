@@ -8,80 +8,64 @@ import {
   Text,
   TouchableOpacity,
   View,
-  Button,
 } from 'react-native';
 
 import { MonoText } from '../components/StyledText';
-import QuestionOne from '../screens/Question_One';
-export default class HomeScreen extends React.Component {
-  static navigationOptions = ({ navigation }) => ({
 
-  });
+export default function HomeScreen() {
+  return (
+    
+    <View style={styles.container}>
 
-  constructor(props) {
-    super(props);
+      <View style={styles.getStartedContainer}>
+          <DevelopmentModeNotice />
 
-  }
-  render() {
-    return (
-      <View style={styles.container}>
-        <ScrollView
-          style={styles.container}
-          contentContainerStyle={styles.contentContainer}>
-          <View style={styles.welcomeContainer}>
+          <Text style={styles.getStartedText}>Animal Kingdom</Text>
+        </View>
+      <ScrollView
+        style={styles.container}
+        contentContainerStyle={styles.contentContainer}>
+        <View style={styles.welcomeContainer}>
+          <Image
+            source={
+              require('../assets/images/genie.png')
+            }
+            style={styles.welcomeImage}
+          />
+          <Image
+            source={
+              require('../assets/images/lamp.png')
+            }
+            style={styles.welcomeImage}
+          />
+        </View>
 
-            <Image
-              source={require('../assets/images/robot-prod.png')}
-              style={styles.welcomeImage}
-            />
-          </View>
+        {/* <Button onPress={this.props.navigation.navigate'LinksScreen.js'}> */}
 
-          <View style={styles.getStartedContainer}>
-            <DevelopmentModeNotice />
-
-            <Text style={styles.getStartedText}>Get started by opening</Text>
-
-            <View
-              style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
-              <MonoText>screens/HomeScreen.js</MonoText>
-            </View>
-
-            <Text style={styles.getStartedText}>
-              Change this text and your app will automatically reload.
-          </Text>
-          </View>
-
-          <View style={styles.helpContainer}>
-            <TouchableOpacity onPress={handleHelpPress} style={styles.helpLink}>
-              <Text style={styles.helpLinkText}>
-                Help, it didn’t automatically reload!
+        {/* <View style={styles.helpContainer}>
+          <TouchableOpacity onPress={handleHelpPress} style={styles.helpLink}>
+            <Text style={styles.helpLinkText}>
+              Help, it didn’t automatically reload!
             </Text>
-            </TouchableOpacity>
-          </View>
-        </ScrollView>
+          </TouchableOpacity>
+        </View> */}
+      </ScrollView>
 
-        <View style={styles.tabBarInfoContainer}>
-          <Text style={styles.tabBarInfoText}>
-            This is a tab bar. You can edit it in:
+      {/* <View style={styles.tabBarInfoContainer}>
+        <Text style={styles.tabBarInfoText}>
+          This is a tab bar. You can edit it in:
         </Text>
 
-
-
-          <View
-            style={[styles.codeHighlightContainer, styles.navigationFilename]}>
-
-            <Button onPress={() => {this.props.navigation.navigate('QuestionOne')}} />
-
-
-            <MonoText style={styles.codeHighlightText}>
-              navigation/MainTabNavigator.js
+        <View
+          style={[styles.codeHighlightContainer, styles.navigationFilename]}>
+          <MonoText style={styles.codeHighlightText}>
+            navigation/MainTabNavigator.js
           </MonoText>
-          </View>
-        </View>
-      </View>
-    );
-  }
+        </View> */}
+      {/* </View> */}
 
+    </View>
+  );
 }
 
 HomeScreen.navigationOptions = {
@@ -144,8 +128,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   welcomeImage: {
-    width: 100,
-    height: 80,
+    width: 200,
+    height: 180,
     resizeMode: 'contain',
     marginTop: 3,
     marginLeft: -10,
@@ -166,9 +150,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 4,
   },
   getStartedText: {
-    fontSize: 17,
+    fontSize: 80,
     color: 'rgba(96,100,109, 1)',
-    lineHeight: 24,
+    lineHeight: 100,
     textAlign: 'center',
   },
   tabBarInfoContainer: {
