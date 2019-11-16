@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     marginLeft: -10,
   },
   getStartedContainer: {
-    alignItems: 'left',
+    alignItems: 'flex-start',
     marginHorizontal: 150,
   },
   homeScreenFilename: {

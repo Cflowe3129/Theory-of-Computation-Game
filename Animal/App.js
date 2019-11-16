@@ -21,12 +21,12 @@ export default createAppContainer(
   createSwitchNavigator({
     // You could add another route here for authentication.
     // Read more at https://reactnavigation.org/docs/en/auth-flow.html
+    QOne: QuestionOne,
     Mammal: MammalScreen,
     Amphibian: AmphibianScreen,
     Fish: FishScreen,
     Reptile: ReptileScreen,
     Bird: BirdScreen,
-    QOne: QuestionOne,
     Home: HomeScreen,
     Picker: AnimalPicker,
     Main: MainTabNavigator,

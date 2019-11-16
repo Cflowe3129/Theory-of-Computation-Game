@@ -9,10 +9,12 @@ import {
   TouchableOpacity,
   View,
   Button,
+  Alert,
 } from 'react-native';
 
 import { MonoText } from '../components/StyledText';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp, listenOruentationChange as loc, removeOrientationListener as rol } from 'react-native-responsive-screen';
+import { tsTypeAliasDeclaration } from '@babel/types';
 
 export default class QuestionOne extends React.Component {
   static navigationOptions = ({ navigation }) => ({
@@ -22,53 +24,147 @@ export default class QuestionOne extends React.Component {
   constructor(props) {
     super(props);
 
-  }
+    this.state = {
+      selectedOne: false,
+      selectedTwo: false,
+      selectedThree: false,
+      selectedFour: false,
+    }
 
+  }
   render() {
+    var responses= [this.state.selectedOne, this.state.selectedTwo, this.state.selectedThree, this.state.selectedFour]
 
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <View style={{ padding: wp('5%') }} />
         <View style={styles.getStartedContainer}>
 
           <Text style={styles.getStartedText}>Let's start with...</Text>
         </View>
+
         <View style={{ padding: wp('3%') }} />
+
         <View style={styles.getStartedContainer}>
 
           <Text style={styles.getStartedText}>Does this animal fly?</Text>
-        </View>
-        <View style={{ padding: wp('3%') }} />
-        <View style={styles.getStartedContainer}>
 
-          <Text style={styles.getStartedText}>Does this animal lay eggs?</Text>
-        </View>
-        <View style={{ padding: wp('3%') }} />
-        <View style={styles.getStartedContainer}>
+          <View style={{ flexDirection: 'row', paddingTop: hp('2%') }}>
+            <TouchableOpacity onPress={() => { this.setState({selectedOne: true}) }} style={styles.yesButton}>
+              <Text style={styles.nextText}>Yes</Text>
+            </TouchableOpacity>
 
-          <Text style={styles.getStartedText}>Does this animal have scales?</Text>
-        </View>
-        <View style={{ padding: wp('3%') }} />
-        <View style={styles.getStartedContainer}>
+            <View style={{ padding: wp('2%') }} />
 
-          <Text style={styles.getStartedText}>Does this animal have gills?</Text>
-        </View>
-        <View style={{ padding: wp('3%') }} />
+            <TouchableOpacity onPress={() => { this.setState({selectedOne: false}) }} style={styles.noButton}>
+              <Text style={styles.nextText}>No</Text>
+            </TouchableOpacity>
 
-        <ScrollView
-          style={styles.container}
-          contentContainerStyle={styles.contentContainer}>
-          <View style={styles.welcomeContainer}>
+            <View style={{ padding: wp('2%') }} />
 
-            <Button onPress={() => { this.props.navigation.navigate('Home') }} />
+
+            {this.state.selectedOne == true && <Text style={styles.getStartedText}>Yes</Text>}
+            {this.state.selectedOne == false && <Text style={styles.getStartedText}>No</Text>}
+
           </View>
 
 
+        </View>
 
-        </ScrollView>
+        <View style={{ padding: wp('3%') }} />
+
+        <View style={styles.getStartedContainer}>
+
+          <Text style={styles.getStartedText}>Does this animal lay eggs?</Text>
+          
+          <View style={{ flexDirection: 'row', paddingTop: hp('2%') }}>
+            <TouchableOpacity onPress={() => { this.setState({selectedTwo: true}) }} style={styles.yesButton}>
+              <Text style={styles.nextText}>Yes</Text>
+            </TouchableOpacity>
+
+            <View style={{ padding: wp('2%') }} />
+
+            <TouchableOpacity onPress={() => { this.setState({selectedTwo: false}) }} style={styles.noButton}>
+              <Text style={styles.nextText}>No</Text>
+            </TouchableOpacity>
+
+            <View style={{ padding: wp('2%') }} />
 
 
-      </View>
+            {this.state.selectedTwo == true && <Text style={styles.getStartedText}>Yes</Text>}
+            {this.state.selectedTwo == false && <Text style={styles.getStartedText}>No</Text>}
+
+          </View>
+          
+        </View>
+
+        <View style={{ padding: wp('3%') }} />
+
+        <View style={styles.getStartedContainer}>
+
+          <Text style={styles.getStartedText}>Does this animal have scales?</Text>
+
+          <View style={{ flexDirection: 'row', paddingTop: hp('2%') }}>
+            <TouchableOpacity onPress={() => { this.setState({selectedThree: true}) }} style={styles.yesButton}>
+              <Text style={styles.nextText}>Yes</Text>
+            </TouchableOpacity>
+
+            <View style={{ padding: wp('2%') }} />
+
+            <TouchableOpacity onPress={() => { this.setState({selectedThree: false}) }} style={styles.noButton}>
+              <Text style={styles.nextText}>No</Text>
+            </TouchableOpacity>
+
+            <View style={{ padding: wp('2%') }} />
+
+
+            {this.state.selectedThree == true && <Text style={styles.getStartedText}>Yes</Text>}
+            {this.state.selectedThree == false && <Text style={styles.getStartedText}>No</Text>}
+
+          </View>
+
+        </View>
+
+        <View style={{ padding: wp('3%') }} />
+
+        <View style={styles.getStartedContainer}>
+
+          <Text style={styles.getStartedText}>Does this animal have gills?</Text>
+
+          <View style={{ flexDirection: 'row', paddingTop: hp('2%') }}>
+            <TouchableOpacity onPress={() => { this.setState({selectedFour: true}) }} style={styles.yesButton}>
+              <Text style={styles.nextText}>Yes</Text>
+            </TouchableOpacity>
+
+            <View style={{ padding: wp('2%') }} />
+
+            <TouchableOpacity onPress={() => { this.setState({selectedFour: false}) }} style={styles.noButton}>
+              <Text style={styles.nextText}>No</Text>
+            </TouchableOpacity>
+
+            <View style={{ padding: wp('2%') }} />
+
+
+            {this.state.selectedFour == true && <Text style={styles.getStartedText}>Yes</Text>}
+            {this.state.selectedFour == false && <Text style={styles.getStartedText}>No</Text>}
+
+          </View>
+
+        </View>
+        <View style={{ padding: wp('3%') }} />
+
+
+
+        <View style={{ alignItems: 'center' }}>
+
+          <TouchableOpacity onPress={() => { Alert.alert("Responses" + responses) }} style={styles.nextButton}>
+            <Text style={styles.nextText}>Next</Text>
+          </TouchableOpacity>
+
+        </View>
+
+
+      </ScrollView>
     );
   }
 
@@ -97,7 +193,7 @@ const styles = StyleSheet.create({
     marginLeft: -10,
   },
   getStartedContainer: {
-    alignItems: 'left',
+    alignItems: 'flex-start',
     marginHorizontal: 150,
   },
   homeScreenFilename: {
@@ -113,9 +209,10 @@ const styles = StyleSheet.create({
   },
   getStartedText: {
     fontSize: 60,
-    color: 'rgba(96,100,109, 1)',
+    color: 'black',
     lineHeight: 24,
     textAlign: 'left',
+    padding: hp('2%')
   },
   tabBarInfoContainer: {
     position: 'absolute',
@@ -155,5 +252,46 @@ const styles = StyleSheet.create({
   helpLinkText: {
     fontSize: 14,
     color: '#2e78b7',
+  },
+  nextButton: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignContent: 'center',
+    width: wp('30%'),
+    height: hp('10%'),
+    borderRadius: 5,
+    backgroundColor: 'rgb(29, 185, 84)',
+    marginTop: hp('2%'),
+    marginBottom: hp('1%'),
+  },
+  yesButton: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignContent: 'center',
+    width: wp('13%'),
+    height: hp('10%'),
+    borderRadius: 5,
+    backgroundColor: 'rgb(72, 221, 255)',
+    marginTop: hp('2%'),
+    marginBottom: hp('1%'),
+    fontWeight: 'bold',
+  },
+  noButton: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignContent: 'center',
+    width: wp('13%'),
+    height: hp('10%'),
+    borderRadius: 5,
+    backgroundColor: 'rgb(255, 101, 101)',
+    marginTop: hp('2%'),
+    marginBottom: hp('1%'),
+    fontWeight: 'bold',
+  },
+  nextText: {
+    fontSize: 50,
+    color: 'black',
+    lineHeight: 100,
+    textAlign: 'center',
   },
 });
