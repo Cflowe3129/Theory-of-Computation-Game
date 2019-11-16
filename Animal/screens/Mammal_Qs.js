@@ -22,9 +22,18 @@ export default class QuestionOne extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      selectedOne: false,
+      selectedTwo: false,
+      selectedThree: false,
+    }
+
   }
 
   render() {
+    var response1 = this.state.selectedOne;
+    var response2 = this.state.selectedTwo;
+    var response3 = this.state.selectedThree;
 
     return (
       <View style={styles.container}>
@@ -37,16 +46,76 @@ export default class QuestionOne extends React.Component {
         <View style={styles.getStartedContainer}>
 
           <Text style={styles.getStartedText}>Can this animal walk upright?</Text>
+
+          <View style={{ flexDirection: 'row', paddingTop: hp('2%') }}>
+            <TouchableOpacity onPress={() => { this.setState({selectedOne: true}) }} style={styles.yesButton}>
+              <Text style={styles.nextText}>Yes</Text>
+            </TouchableOpacity>
+
+            <View style={{ padding: wp('2%') }} />
+
+            <TouchableOpacity onPress={() => { this.setState({selectedOne: false}) }} style={styles.noButton}>
+              <Text style={styles.nextText}>No</Text>
+            </TouchableOpacity>
+
+            <View style={{ padding: wp('2%') }} />
+
+
+            {this.state.selectedOne == true && <Text style={styles.getStartedText}>Yes</Text>}
+            {this.state.selectedOne == false && <Text style={styles.getStartedText}>No</Text>}
+
+          </View>
+
         </View>
         <View style={{ padding: wp('3%') }} />
         <View style={styles.getStartedContainer}>
 
           <Text style={styles.getStartedText}>Does this animal swing from trees?</Text>
+
+          <View style={{ flexDirection: 'row', paddingTop: hp('2%') }}>
+            <TouchableOpacity onPress={() => { this.setState({selectedTwo: true}) }} style={styles.yesButton}>
+              <Text style={styles.nextText}>Yes</Text>
+            </TouchableOpacity>
+
+            <View style={{ padding: wp('2%') }} />
+
+            <TouchableOpacity onPress={() => { this.setState({selectedTwo: false}) }} style={styles.noButton}>
+              <Text style={styles.nextText}>No</Text>
+            </TouchableOpacity>
+
+            <View style={{ padding: wp('2%') }} />
+
+
+            {this.state.selectedTwo == true && <Text style={styles.getStartedText}>Yes</Text>}
+            {this.state.selectedTwo == false && <Text style={styles.getStartedText}>No</Text>}
+
+          </View>
+
         </View>
         <View style={{ padding: wp('3%') }} />
         <View style={styles.getStartedContainer}>
 
           <Text style={styles.getStartedText}>Does this animal eat meat?</Text>
+
+          <View style={{ flexDirection: 'row', paddingTop: hp('2%') }}>
+            <TouchableOpacity onPress={() => { this.setState({selectedThree: true}) }} style={styles.yesButton}>
+              <Text style={styles.nextText}>Yes</Text>
+            </TouchableOpacity>
+
+            <View style={{ padding: wp('2%') }} />
+
+            <TouchableOpacity onPress={() => { this.setState({selectedThree: false}) }} style={styles.noButton}>
+              <Text style={styles.nextText}>No</Text>
+            </TouchableOpacity>
+
+            <View style={{ padding: wp('2%') }} />
+
+
+            {this.state.selectedThree == true && <Text style={styles.getStartedText}>Yes</Text>}
+            {this.state.selectedThree == false && <Text style={styles.getStartedText}>No</Text>}
+
+          </View>
+
         </View>
         <View style={{ padding: wp('3%') }} />
 
@@ -55,7 +124,10 @@ export default class QuestionOne extends React.Component {
           contentContainerStyle={styles.contentContainer}>
           <View style={styles.welcomeContainer}>
 
-            <Button onPress={() => { this.props.navigation.navigate('Home') }} />
+          <TouchableOpacity style={styles.nextButton}>
+              <Text style={styles.nextText}>Next</Text>
+            </TouchableOpacity> 
+
           </View>
 
 
@@ -84,71 +156,58 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 20,
   },
-  welcomeImage: {
-    width: 100,
-    height: 80,
-    resizeMode: 'contain',
-    marginTop: 3,
-    marginLeft: -10,
-  },
+  
   getStartedContainer: {
     alignItems: 'flex-start',
     marginHorizontal: 150,
   },
-  homeScreenFilename: {
-    marginVertical: 7,
-  },
-  codeHighlightText: {
-    color: 'rgba(96,100,109, 0.8)',
-  },
-  codeHighlightContainer: {
-    backgroundColor: 'rgba(0,0,0,0.05)',
-    borderRadius: 3,
-    paddingHorizontal: 4,
-  },
   getStartedText: {
     fontSize: 60,
-    color: 'rgba(96,100,109, 1)',
+    color: 'black',
     lineHeight: 24,
     textAlign: 'left',
+    padding: hp('2%')
   },
-  tabBarInfoContainer: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
-    ...Platform.select({
-      ios: {
-        shadowColor: 'black',
-        shadowOffset: { width: 0, height: -3 },
-        shadowOpacity: 0.1,
-        shadowRadius: 3,
-      },
-      android: {
-        elevation: 20,
-      },
-    }),
-    alignItems: 'center',
-    backgroundColor: '#fbfbfb',
-    paddingVertical: 20,
-  },
-  tabBarInfoText: {
-    fontSize: 17,
-    color: 'rgba(96,100,109, 1)',
+  nextText: {
+    fontSize: 50,
+    color: 'black',
+    lineHeight: 100,
     textAlign: 'center',
   },
-  navigationFilename: {
-    marginTop: 5,
-  },
-  helpContainer: {
-    marginTop: 15,
+  nextButton: {
     alignItems: 'center',
+    justifyContent: 'center',
+    alignContent: 'center',
+    width: wp('30%'),
+    height: hp('10%'),
+    borderRadius: 5,
+    backgroundColor: 'rgb(29, 185, 84)',
+    marginTop: hp('2%'),
+    marginBottom: hp('1%'),
   },
-  helpLink: {
-    paddingVertical: 15,
+  yesButton: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignContent: 'center',
+    width: wp('13%'),
+    height: hp('10%'),
+    borderRadius: 5,
+    backgroundColor: 'rgb(72, 221, 255)',
+    marginTop: hp('2%'),
+    marginBottom: hp('1%'),
+    fontWeight: 'bold',
   },
-  helpLinkText: {
-    fontSize: 14,
-    color: '#2e78b7',
+  noButton: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignContent: 'center',
+    width: wp('13%'),
+    height: hp('10%'),
+    borderRadius: 5,
+    backgroundColor: 'rgb(255, 101, 101)',
+    marginTop: hp('2%'),
+    marginBottom: hp('1%'),
+    fontWeight: 'bold',
   },
 });
+
