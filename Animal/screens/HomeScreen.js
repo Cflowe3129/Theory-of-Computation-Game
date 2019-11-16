@@ -8,10 +8,9 @@ import {
   Text,
   TouchableOpacity,
   View,
-  Button,
 } from 'react-native';
 
-import { MonoText } from '../components/StyledText';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp, listenOruentationChange as loc, removeOrientationListener as rol } from 'react-native-responsive-screen';
 
 export default class HomeScreen extends React.Component {
   static navigationOptions = ({ navigation }) => ({
@@ -22,18 +21,18 @@ export default class HomeScreen extends React.Component {
   constructor(props) {
     super(props);
 
-   
-}
+
+  }
   render() {
     return (
-    
+
       <View style={styles.container}>
-  
+
         <View style={styles.getStartedContainer}>
-            <DevelopmentModeNotice />
-  
-            <Text style={styles.getStartedText}>Animal Kingdom</Text>
-          </View>
+          <DevelopmentModeNotice />
+
+          <Text style={styles.getStartedText}>Animal Kingdom</Text>
+        </View>
         <ScrollView
           style={styles.container}
           contentContainerStyle={styles.contentContainer}>
@@ -51,15 +50,22 @@ export default class HomeScreen extends React.Component {
               style={styles.welcomeImage}
             />
           </View>
-  
-<Button onPress={()=> {this.props.navigation.navigate('QOne')}}/>
-         
+          <View style={{alignItems: 'center'}}>
+
+            <TouchableOpacity onPress={() => { this.props.navigation.navigate('Picker') }} style={styles.startButton}>
+              <Text style={styles.startText}>Start</Text>
+            </TouchableOpacity>
+
+          </View>
+
+
+
         </ScrollView>
-  
+
       </View>
     );
   }
-  
+
 }
 
 HomeScreen.navigationOptions = {
@@ -187,5 +193,22 @@ const styles = StyleSheet.create({
   helpLinkText: {
     fontSize: 14,
     color: '#2e78b7',
+  },
+  startText: {
+    fontSize: 50,
+    color: 'black',
+    lineHeight: 100,
+    textAlign: 'center',
+  },
+  startButton: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignContent: 'center',
+    width: wp('30%'),
+    height: hp('10%'),
+    borderRadius: 5,
+    backgroundColor: 'rgb(29, 185, 84)',
+    marginTop: hp('2%'),
+    marginBottom: hp('1%'),
   },
 });
