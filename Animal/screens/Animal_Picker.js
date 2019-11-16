@@ -40,23 +40,23 @@ export default class AnimalPicker extends React.Component {
 
           <View style={{ alignItems: 'flex-start', paddingLeft: wp('5%'), flexDirection: 'column' }} >
 
-            <TouchableOpacity style={styles.animalButton}>
+          <TouchableOpacity onPress={() => { this.props.navigation.navigate('QOne')}} style={styles.animalButton}>
               <Text style={styles.animalText}>Penguin</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.animalButton}>
+            <TouchableOpacity onPress={() => { this.props.navigation.navigate('QOne')}} style={styles.animalButton}>
             <Text style={styles.animalText}>Komodo Dragon</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.animalButton}>
+            <TouchableOpacity onPress={() => { this.props.navigation.navigate('QOne')}} style={styles.animalButton}>
             <Text style={styles.animalText}>Great White Shark</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.animalButton}>
+            <TouchableOpacity onPress={() => { this.props.navigation.navigate('QOne')}} style={styles.animalButton}>
             <Text style={styles.animalText}>Frog</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.animalButton}>
+            <TouchableOpacity onPress={() => { this.props.navigation.navigate('QOne')}} style={styles.animalButton}>
             <Text style={styles.animalText}>Gorilla</Text>
             </TouchableOpacity>
 
@@ -65,23 +65,23 @@ export default class AnimalPicker extends React.Component {
           <View style={{ padding: wp('5%') }} />
           <View style={{ alignItems: 'flex-end', paddingRight: wp('5%'), flexDirection: 'column' }} >
 
-            <TouchableOpacity style={styles.animalButton}>
+          <TouchableOpacity onPress={() => { this.props.navigation.navigate('QOne')}} style={styles.animalButton}>
             <Text style={styles.animalText}>Toucan</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.animalButton}>
+            <TouchableOpacity onPress={() => { this.props.navigation.navigate('QOne')}} style={styles.animalButton}>
             <Text style={styles.animalText}>Snake</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.animalButton}>
+            <TouchableOpacity onPress={() => { this.props.navigation.navigate('QOne')}} style={styles.animalButton}>
             <Text style={styles.animalText}>Swordfish</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.animalButton}>
+            <TouchableOpacity onPress={() => { this.props.navigation.navigate('QOne')}} style={styles.animalButton}>
             <Text style={styles.animalText}>Salamander</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.animalButton}>
+            <TouchableOpacity onPress={() => { this.props.navigation.navigate('QOne')}} style={styles.animalButton}>
             <Text style={styles.animalText}>Lion</Text>
             </TouchableOpacity>
 

@@ -22,7 +22,7 @@ export default class KomodoDragon extends React.Component {
   constructor(props) {
     super(props);
 
-    
+
 
   }
   render() {
@@ -45,24 +45,11 @@ export default class KomodoDragon extends React.Component {
 
         <View style={{ alignItems: 'center' }}>
 
-          <TouchableOpacity onPress={() => { if(response1 === true && response2 === true && response3 === false && response4 === false) {
-            this.props.navigation.navigate('Bird')
-          } 
-          else if (response1 === false && response2 === true && response3 === true && response4 === true) {
-            this.props.navigation.navigate('Fish')
-          }
-          else if (response1 === false && response2 === false && response3 === false && response4 === false) {
-            this.props.navigation.navigate('Mammal')
-          }
-          else if (response1 === false && response2 === true && response3 === false && response4 === false) {
-            this.props.navigation.navigate('Amphibian')
-          }
-          else if (response1 === false && response2 === true && response3 === true && response4 === false) {
-            this.props.navigation.navigate('Reptile')
-          }
+          <TouchableOpacity onPress={() => {
+            this.props.navigation.navigate('Home')
 
           }} style={styles.nextButton}>
-            <Text style={styles.nextText}>Next</Text>
+            <Text style={styles.nextText}>Finish</Text>
           </TouchableOpacity>
 
         </View>
