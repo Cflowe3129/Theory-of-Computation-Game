@@ -33,7 +33,12 @@ export default class QuestionOne extends React.Component {
 
   }
   render() {
-    var responses= [this.state.selectedOne, this.state.selectedTwo, this.state.selectedThree, this.state.selectedFour]
+    var response1 = this.state.selectedOne;
+    var response2 = this.state.selectedTwo;
+    var response3 = this.state.selectedThree;
+    var response4 = this.state.selectedFour;
+
+    var responseArray = [response1, response2, response3, response4];
 
     return (
       <ScrollView style={styles.container}>
@@ -157,7 +162,23 @@ export default class QuestionOne extends React.Component {
 
         <View style={{ alignItems: 'center' }}>
 
-          <TouchableOpacity onPress={() => { Alert.alert("Responses" + responses) }} style={styles.nextButton}>
+          <TouchableOpacity onPress={() => { if(response1 === true && response2 === true && response3 === false && response4 === false) {
+            this.props.navigation.navigate('Bird')
+          } 
+          else if (response1 === false && response2 === true && response3 === true && response4 === true) {
+            this.props.navigation.navigate('Fish')
+          }
+          else if (response1 === false && response2 === false && response3 === false && response4 === false) {
+            this.props.navigation.navigate('Mammal')
+          }
+          else if (response1 === false && response2 === true && response3 === false && response4 === false) {
+            this.props.navigation.navigate('Amphibian')
+          }
+          else if (response1 === false && response2 === true && response3 === true && response4 === false) {
+            this.props.navigation.navigate('Reptile')
+          }
+
+          }} style={styles.nextButton}>
             <Text style={styles.nextText}>Next</Text>
           </TouchableOpacity>
 
