@@ -13,56 +13,40 @@ import {
 
 import { MonoText } from '../components/StyledText';
 
-export default class HomeScreen extends React.Component {
+export default class QuestionOne extends React.Component {
   static navigationOptions = ({ navigation }) => ({
 
   });
 
-
   constructor(props) {
     super(props);
 
-   
-}
+  }
+
   render() {
+
     return (
-    
       <View style={styles.container}>
-  
-        <View style={styles.getStartedContainer}>
-            <DevelopmentModeNotice />
-  
-            <Text style={styles.getStartedText}>Animal Kingdom</Text>
-          </View>
         <ScrollView
           style={styles.container}
           contentContainerStyle={styles.contentContainer}>
           <View style={styles.welcomeContainer}>
-            <Image
-              source={
-                require('../assets/images/genie.png')
-              }
-              style={styles.welcomeImage}
-            />
-            <Image
-              source={
-                require('../assets/images/lamp.png')
-              }
-              style={styles.welcomeImage}
-            />
+
+          <Button onPress={() => { this.props.navigation.navigate('Home')}}/>
           </View>
-  
-<Button onPress={()=> {this.props.navigation.navigate('QOne')}}/>
-         
+
+        
+          
         </ScrollView>
-  
+
+        
       </View>
     );
   }
-  
+
 }
 
-HomeScreen.navigationOptions = {
+QuestionOne.navigationOptions = {
   header: null,
 };
 
@@ -122,8 +106,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   welcomeImage: {
-    width: 200,
-    height: 180,
+    width: 100,
+    height: 80,
     resizeMode: 'contain',
     marginTop: 3,
     marginLeft: -10,
@@ -144,9 +128,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 4,
   },
   getStartedText: {
-    fontSize: 80,
+    fontSize: 17,
     color: 'rgba(96,100,109, 1)',
-    lineHeight: 100,
+    lineHeight: 24,
     textAlign: 'center',
   },
   tabBarInfoContainer: {
