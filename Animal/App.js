@@ -16,11 +16,31 @@ import AmphibianScreen from './screens/Amphibian_Qs';
 import MammalScreen from './screens/Mammal_Qs';
 import HomeScreen from './screens/HomeScreen';
 import AnimalPicker from './screens/Animal_Picker';
+import Penguin from './screens/Animals/Penguin';
+import KomodoDragon from './screens/Animals/KomodoDragon';
+import GreatWhite from './screens/Animals/GreatWhite';
+import Frog from './screens/Animals/Frog';
+import Gorilla from './screens/Animals/Gorilla';
+import Toucan from './screens/Animals/Toucan';
+import Snake from './screens/Animals/Snake';
+import Swordfish from './screens/Animals/Swordfish';
+import Salamander from './screens/Animals/Salamander';
+import Lion from './screens/Animals/Lion';
 
 export default createAppContainer(
   createSwitchNavigator({
     // You could add another route here for authentication.
     // Read more at https://reactnavigation.org/docs/en/auth-flow.html
+    Lion: Lion,
+    Salamander: Salamander,
+    Swordfish: Swordfish,
+    Snake: Snake,
+    Toucan: Toucan,
+    Gorilla: Gorilla,
+    Frog: Frog,
+    Shark: GreatWhite,
+    Komodo: KomodoDragon,
+    Penguin: Penguin,
     QOne: QuestionOne,
     Mammal: MammalScreen,
     Amphibian: AmphibianScreen,
