@@ -31,11 +31,14 @@ export default createAppContainer(
   createSwitchNavigator({
     // You could add another route here for authentication.
     // Read more at https://reactnavigation.org/docs/en/auth-flow.html
-    Lion: Lion,
-    Salamander: Salamander,
+    Toucan: Toucan,
     Swordfish: Swordfish,
     Snake: Snake,
-    Toucan: Toucan,
+    Salamander: Salamander,
+    Penguin: Penguin,
+    Lion: Lion,
+    Komodo: KomodoDragon,
+    Shark: GreatWhite,
     Gorilla: Gorilla,
     Frog: Frog,
     Shark: GreatWhite,

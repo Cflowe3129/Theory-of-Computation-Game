@@ -28,60 +28,78 @@ export default class KomodoDragon extends React.Component {
   render() {
 
     return (
-      <ScrollView style={styles.container}>
+        <View style={styles.container}>
         <View style={{ padding: wp('5%') }} />
+
         <View style={styles.getStartedContainer}>
 
-          <Text style={styles.getStartedText}>Is this your animal?</Text>
-          <Text style={styles.getStartedText}>*insert komodo dragon image</Text>
-
+            <Text style={styles.getStartedText}>Is this your animal?</Text>
         </View>
+        <ScrollView
+            style={styles.container}
+            contentContainerStyle={styles.contentContainer}>
+            <View style={styles.welcomeContainer}>
+                <Image
+                    source={
+                        require('./animalpics/dragon.png')
+                    }
+                    style={styles.welcomeImage}
+                />
+            </View>
+            <View style={{ alignItems: 'center' }}>
 
-        <View style={{ padding: wp('3%') }} />
+                <TouchableOpacity onPress={() => { this.props.navigation.navigate('Home') }} style={styles.nextButton}>
+                    <Text style={styles.nextText}>Finish</Text>
+                </TouchableOpacity>
+
+            </View>
 
 
 
+        </ScrollView>
 
-
-        <View style={{ alignItems: 'center' }}>
-
-          <TouchableOpacity onPress={() => {
-            this.props.navigation.navigate('Home')
-
-          }} style={styles.nextButton}>
-            <Text style={styles.nextText}>Finish</Text>
-          </TouchableOpacity>
-
-        </View>
-
-
-      </ScrollView>
+    </View>
     );
-  }
+}
 
 }
 
 
 
 const styles = StyleSheet.create({
-  container: {
+container: {
     flex: 1,
     backgroundColor: '#fff',
-  },
-  getStartedContainer: {
+},
+getStartedContainer: {
     alignItems: 'center',
     justifyContent: 'center',
     alignContent: 'center',
     marginHorizontal: 150,
-  },
-  getStartedText: {
+},
+contentContainer: {
+    paddingTop: 30,
+},
+getStartedText: {
     fontSize: 60,
     color: 'black',
-    lineHeight: 24,
+    lineHeight: 45,
     textAlign: 'left',
     padding: hp('2%')
+},
+welcomeContainer: {
+    alignItems: 'center',
+    marginTop: 10,
+    marginBottom: 20,
   },
-  nextButton: {
+welcomeImage: {
+    width: 350,
+    height: 280,
+    resizeMode: 'contain',
+    marginTop: 3,
+    marginLeft: -10,
+},
+nextButton: {
     alignItems: 'center',
     justifyContent: 'center',
     alignContent: 'center',
@@ -91,8 +109,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgb(29, 185, 84)',
     marginTop: hp('2%'),
     marginBottom: hp('1%'),
-  },
-  yesButton: {
+},
+yesButton: {
     alignItems: 'center',
     justifyContent: 'center',
     alignContent: 'center',
@@ -103,8 +121,8 @@ const styles = StyleSheet.create({
     marginTop: hp('2%'),
     marginBottom: hp('1%'),
     fontWeight: 'bold',
-  },
-  noButton: {
+},
+noButton: {
     alignItems: 'center',
     justifyContent: 'center',
     alignContent: 'center',
@@ -115,12 +133,11 @@ const styles = StyleSheet.create({
     marginTop: hp('2%'),
     marginBottom: hp('1%'),
     fontWeight: 'bold',
-  },
-  nextText: {
+},
+nextText: {
     fontSize: 50,
     color: 'black',
     lineHeight: 100,
     textAlign: 'center',
-  },
+},
 });
-

@@ -28,39 +28,41 @@ export default class Toucan extends React.Component {
     render() {
 
         return (
-            <ScrollView style={styles.container}>
-                <View style={{ padding: wp('5%') }} />
+            <View style={styles.container}>
+                <View style={{ padding: wp('4%') }} />
+
                 <View style={styles.getStartedContainer}>
 
                     <Text style={styles.getStartedText}>Is this your animal?</Text>
-                    <Text style={styles.getStartedText}>*insert toucan image</Text>
-
                 </View>
+                <ScrollView
+                    style={styles.container}
+                    contentContainerStyle={styles.contentContainer}>
+                    <View style={styles.welcomeContainer}>
+                        <Image
+                            source={
+                                require('./animalpics/toucan.jpg')
+                            }
+                            style={styles.welcomeImage}
+                        />
+                    </View>
+                    <View style={{ alignItems: 'center' }}>
 
-                <View style={{ padding: wp('3%') }} />
+                        <TouchableOpacity onPress={() => { this.props.navigation.navigate('Home') }} style={styles.nextButton}>
+                            <Text style={styles.nextText}>Finish</Text>
+                        </TouchableOpacity>
+
+                    </View>
 
 
 
+                </ScrollView>
 
-
-                <View style={{ alignItems: 'center' }}>
-
-                    <TouchableOpacity onPress={() => {
-                        this.props.navigation.navigate('Home')
-
-                    }} style={styles.nextButton}>
-                        <Text style={styles.nextText}>Finish</Text>
-                    </TouchableOpacity>
-
-                </View>
-
-
-            </ScrollView>
+            </View>
         );
     }
 
 }
-
 
 
 const styles = StyleSheet.create({
@@ -74,12 +76,27 @@ const styles = StyleSheet.create({
         alignContent: 'center',
         marginHorizontal: 150,
     },
+    contentContainer: {
+        paddingTop: 30,
+    },
     getStartedText: {
         fontSize: 60,
         color: 'black',
-        lineHeight: 24,
+        lineHeight: 45,
         textAlign: 'left',
         padding: hp('2%')
+    },
+    welcomeContainer: {
+        alignItems: 'center',
+        marginTop: 10,
+        marginBottom: 20,
+    },
+    welcomeImage: {
+        width: 400,
+        height: 380,
+        resizeMode: 'contain',
+        marginTop: 3,
+        marginLeft: -10,
     },
     nextButton: {
         alignItems: 'center',
@@ -123,4 +140,3 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
 });
-
