@@ -127,12 +127,16 @@ export default class QuestionOne extends React.Component {
           contentContainerStyle={styles.contentContainer}>
           <View style={styles.welcomeContainer}>
 
-          <TouchableOpacity onPress={() => { if(response1 === true && response2 === true && response3 === true ) {
+          <TouchableOpacity onPress={() => { if(response1 === true && response3 === true ) {
             this.props.navigation.navigate('Komodo')
           } 
-          else if (response1 === false && response2 === false && response3 === false ) {
+          else if (response1 === false && response3 === false ) {
             this.props.navigation.navigate('Snake')
           }
+          else {
+            this.props.navigation.navigate('Unknown')
+          }
+          
           }} style={styles.nextButton}>
             <Text style={styles.nextText}>Next</Text>
           </TouchableOpacity>

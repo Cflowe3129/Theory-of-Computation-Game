@@ -134,6 +134,10 @@ export default class QuestionOne extends React.Component {
           else if (response1 === false && response2 === true && response3 === true ) {
             this.props.navigation.navigate('Toucan')
           }
+          else {
+            this.props.navigation.navigate('Unknown')
+          }
+          
           }} style={styles.nextButton}>
             <Text style={styles.nextText}>Next</Text>
           </TouchableOpacity>

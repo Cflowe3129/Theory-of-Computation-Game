@@ -26,11 +26,12 @@ import Snake from './screens/Animals/Snake';
 import Swordfish from './screens/Animals/Swordfish';
 import Salamander from './screens/Animals/Salamander';
 import Lion from './screens/Animals/Lion';
-
+import NoGuess from './screens/No_Guess';
 export default createAppContainer(
   createSwitchNavigator({
     // You could add another route here for authentication.
     // Read more at https://reactnavigation.org/docs/en/auth-flow.html
+    Unknown: NoGuess,
     Toucan: Toucan,
     Swordfish: Swordfish,
     Snake: Snake,
