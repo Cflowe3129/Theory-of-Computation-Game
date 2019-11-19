@@ -31,6 +31,7 @@ export default createAppContainer(
   createSwitchNavigator({
     // You could add another route here for authentication.
     // Read more at https://reactnavigation.org/docs/en/auth-flow.html
+    Home: HomeScreen,
     Unknown: NoGuess,
     Toucan: Toucan,
     Swordfish: Swordfish,
@@ -51,7 +52,6 @@ export default createAppContainer(
     Fish: FishScreen,
     Reptile: ReptileScreen,
     Bird: BirdScreen,
-    Home: HomeScreen,
     Picker: AnimalPicker,
     Main: MainTabNavigator,
   })
